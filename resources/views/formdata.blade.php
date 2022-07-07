@@ -24,4 +24,22 @@
             <input type="date" name="birthdate" id="birthdate" placeholder="Введите дату рождения" class="form-control"><br>
             <button type="submit" class="btn btn-success">Отправить</button>
         </form>
+        <br>
+        <hr>
+
+        <h2>Все контакты</h2>
+        @foreach($contacts as $el)
+            <div class="alert alert-warning">
+                <h4>
+                    {{$el->id}} .
+                    {{$el->name}} |
+                    {{$el->phonenumber}} |
+                    {{$el->email}} |
+                    {{$el->birthdate}}
+                    <br>
+                    <button type="submit" id={{$el->id}} class="btn btn-lg btn-primary">Edit[не реализовано]</button>
+                    <button type="submit" id={{$el->id}} class="btn btn-lg btn-primary">Delete[не реализовано]</button>
+                </h4>
+            </div>
+        @endforeach
     @endsection

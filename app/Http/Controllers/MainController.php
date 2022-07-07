@@ -15,10 +15,13 @@ class MainController extends Controller
 
     public function formdata()
     {
-        return view('formdata');
+        $contacts = new ContactModel();
+        return view('formdata', ['contacts' => $contacts->all()]);
     }
 
-    public function review() {}
+
+
+
 
     public function formdata_check(Request $request)
     {
